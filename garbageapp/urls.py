@@ -19,7 +19,10 @@ from django.urls import path , include
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+
+    #REST FRAMEWORK URLS
+    path('api/accounts/', include('accounts.api.urls','account_api')),
 ]
 
-#REST FRAMEWORK URLS
-path('api/accounts/', include('accounts.api.urls','account_api')),
+
+
