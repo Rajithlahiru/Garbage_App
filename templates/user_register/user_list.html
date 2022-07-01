@@ -1,0 +1,42 @@
+{% extends "user_register\base.html" %}
+
+{% block content %}
+
+<table class="table table-borderless">
+    <thead class="border-bottom font-weight-bold">
+        <tr>
+            <td>Username</td>
+            <td>Mobile no</td>
+            <td>NIC</td>
+            <td>Address</td>
+            <td> 
+                <a href="{% url 'user_insert' %}" class="btn btn-outline-success">
+                    <i class="fas fa-plus"></i> Add New
+                </a>
+            </td>
+        </tr>
+    </thead>
+    <tbody>
+        {% for user in user_list %}
+            <td>{{user.username}}</td>
+            <td>{{user.mobile_no}}</td>
+            <td>{{user.nic}}</td>
+            <td>{{user.address}}</td>
+            <td>
+                <a href="{% url 'user_update' user.id %}" class="btn text-secondary px-0">
+                    <i class="fa fa-edit fa-lg">
+                        
+                    </i>
+                </a>
+                <form action="{% url 'user_delete' user.id %}" method="post" class="d-inline">
+                    {% csrf_token %}
+                    <button type="submit" class="btn">
+                        <i class="fas fa-trash-alt fa-lg text-danger float-right"></i>
+                    </button>
+                </form>
+            </td>
+        {% endfor %}
+    </tbody>
+</table>
+
+{% endblock content %}
