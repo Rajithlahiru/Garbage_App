@@ -21,6 +21,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('dashboard/', include('dashboard.urls')),
     path('user/', include('user_register.urls')),
+    path('vehicle/', include('vehicle_register.urls')),
 
     #REST FRAMEWORK URLS
     path('api/accounts/', include('accounts.api.urls','account_api')),

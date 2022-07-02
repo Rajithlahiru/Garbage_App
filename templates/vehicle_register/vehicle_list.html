@@ -1,0 +1,42 @@
+{% extends "base\base.html" %}
+
+{% block content %}
+
+<table class="table table-borderless">
+    <thead class="border-bottom font-weight-bold">
+        <tr>
+            <td>Vehicle Type</td>
+            <td>Vehicle Model</td>
+            <td>Vehicle Number</td>
+            <td>Owner Name</td>
+            <td> 
+                <a href="{% url 'vehicle_insert' %}" class="btn btn-outline-success">
+                    <i class="fas fa-plus"></i> Add New
+                </a>
+            </td>
+        </tr>
+    </thead>
+    <tbody>
+        {% for vehicle in vehicle_list %}
+            <td>{{vehicle.vehicle_type}}</td>
+            <td>{{vehicle.vehicle_model}}</td>
+            <td>{{vehicle.vehicle_no}}</td>
+            <td>{{vehicle.owner_name}}</td>
+            <td>
+                <a href="{% url 'vehicle_update' vehicle.id %}" class="btn text-secondary px-0">
+                    <i class="fa fa-edit fa-lg">
+                        
+                    </i>
+                </a>
+                <form action="{% url 'vehicle_delete' vehicle.id %}" method="post" class="d-inline">
+                    {% csrf_token %}
+                    <button type="submit" class="btn">
+                        <i class="fas fa-trash-alt fa-lg text-danger float-right"></i>
+                    </button>
+                </form>
+            </td>
+        {% endfor %}
+    </tbody>
+</table>
+
+{% endblock content %}
