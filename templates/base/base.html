@@ -63,8 +63,7 @@
                     <a href="{% url 'user_list' %}" class="nav-item nav-link active"><i class="fa fa-tachometer-alt me-2"></i>Dashboard</a>
                     <a href="{% url 'user_list' %}" class="nav-item nav-link"><i class="fa fa-user"></i>User</a>
                     <a href="{% url 'vehicle_list' %}" class="nav-item nav-link"><i class="fa fa-truck me-2"></i>Vehicle</a>
-                    <a href="table.html" class="nav-item nav-link"><i class="fa fa-table me-2"></i>Tables</a>
-                    <a href="chart.html" class="nav-item nav-link"><i class="fa fa-chart-bar me-2"></i>Charts</a>
+                    <a href="{% url 'show_map' %}" class="nav-item nav-link"><i class="fa fa-search-location me-2"></i>Map</a>
                     <div class="nav-item dropdown">
                         <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i class="far fa-file-alt me-2"></i>Pages</a>
                         <div class="dropdown-menu bg-transparent border-0">
@@ -172,13 +171,15 @@
             </nav>
             <!-- Navbar End -->
 
-            
+            <!-- user and vehicle register section -->
             <div class="container-fluid pt-4 px-4">
                 {% block content %}
                 {% endblock content %}
             </div>
+           <!-- user and vehicle register section ended -->
            
-           
+          
+
             
         </div>
         <!-- Content End -->

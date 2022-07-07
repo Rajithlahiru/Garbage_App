@@ -1,0 +1,14 @@
+{% extends "base\base.html" %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+
+<div class="container">
+    <div class="row mt-4">
+        <div class="col-md-10 offset-md-1">
+            {{m|safe}}
+        </div>
+    </div>
+</div>
+
+{% endblock content %}
