@@ -27,6 +27,7 @@ urlpatterns = [
     #REST FRAMEWORK URLS
     path('api/accounts/', include('accounts.api.urls','account_api')),
     path('request/', include('request.urls')),
+    path('auth/', include('authentication.urls')),
 ]
 
 
