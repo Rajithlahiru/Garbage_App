@@ -5,7 +5,7 @@ from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework import status
 from .models import Request
-from .serializers import RequestSerializer
+from .serializers import LocationSerializer, RequestSerializer
 
 # Create your views here.
 class RequestList(APIView):
@@ -17,3 +17,9 @@ class RequestList(APIView):
 
     def post(self):
         pass
+
+class LocationApi(APIView):
+    def get(self,request):
+        locations = Request.objects.all()
+        serializer = LocationSerializer(locations, many = True)
+        return Response(serializer.data)
