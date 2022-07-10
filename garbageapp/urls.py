@@ -25,7 +25,7 @@ urlpatterns = [
     path('gmap/', include('g_map.urls')),
 
     #REST FRAMEWORK URLS
-    path('request/', include('request.urls')),
+    path('', include('request.urls')),
     path('auth/', include('authentication.urls')),
 ]
 
