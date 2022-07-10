@@ -18,6 +18,7 @@
     </thead>
     <tbody>
         {% for vehicle in vehicle_list %}
+            <tr>
             <td>{{vehicle.vehicle_type}}</td>
             <td>{{vehicle.vehicle_model}}</td>
             <td>{{vehicle.vehicle_no}}</td>
@@ -35,6 +36,7 @@
                     </button>
                 </form>
             </td>
+            </tr>
         {% endfor %}
     </tbody>
 </table>

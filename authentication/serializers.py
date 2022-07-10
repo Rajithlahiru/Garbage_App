@@ -1,26 +1,18 @@
-from cProfile import label
-from dataclasses import field
-import email
-from pyexpat import model
 from rest_framework import serializers
-from user_register.models import User
+from user_register.models  import User
+from django.contrib.auth.models import User
 
-class RegisterSerializer(serializers.ModelSerializer):
-    password = serializers.CharField(max_length = 68, min_length= 4, write_only =True)
+class UserSerializer(serializers.ModelSerializer):
+      class Meta:
+            model = User
+            fields = ['id','username', 'email', 'password']
 
-    class Meta:
-        model = User
-        fields = ['username','email','password']
-
-    def validate(self, attrs):
-        email = attrs.get('email','')
-        username = attrs.get('username','')
-        
-        if not username.isalnum():
+      def validate(self, attrs):
+        email = attrs.get('email', '')
+        if User.objects.filter(email=email).exists():
             raise serializers.ValidationError(
-                'The username invalid'
-            )
-        return attrs
-        
-    def create(self, validated_data):
+                {'email': ('Email is already in use')})
+        return super().validate(attrs)
+
+      def create(self, validated_data):
         return User.objects.create_user(**validated_data)

@@ -3,31 +3,31 @@ var latlng;
 var infowindow;
 $(document).ready(function() {
     //get data set from the backend in a json structure
-    var data = [{
-            "description": "Location A",
-            "location": "kurunegala",
-            "latitude": "7.4818",
-            "longitude": "80.3609"
-        },
-        {
-            "description": "Location B",
-            "location": "kandy",
-            "latitude": "7.2906",
-            "longitude": "80.6337"
-        }
-    ]
+    // var data = [{
+    //         "description": "Location A",
+    //         "location": "kurunegala",
+    //         "latitude": "7.4818",
+    //         "longitude": "80.3609"
+    //     },
+    //     {
+    //         "description": "Location B",
+    //         "location": "kandy",
+    //         "latitude": "7.2906",
+    //         "longitude": "80.6337"
+    //     }
+    // ]
     //if backend servie ready
-    // $.ajax({ //library for JS help front-end to talk back-end, without having to reload the page
-    //   url: "HelpMapper-backend.php",
-    //   async: true,
-    //   dataType: 'json', // is a language
-    //   success: function (data) {
-    //     console.log(data);
-    //     ViewCustInGoogleMap(data);
-    //   }
-    // }); 
-    // console.log(data);
-    ViewCustInGoogleMap(data);
+    $.ajax({ //library for JS help front-end to talk back-end, without having to reload the page
+      url: "request/locations/",
+      async: true,
+      dataType: 'json', // is a language
+      success: function (data) {
+        console.log(data);
+        ViewCustInGoogleMap(data);
+      }
+    }); 
+    console.log(data);
+    // ViewCustInGoogleMap(data);
 });
 function ViewCustInGoogleMap(data) {
     var gm = google.maps; //create instance of google map
@@ -59,7 +59,7 @@ function ViewCustInGoogleMap(data) {
             (
                 function(marker, i) {
                     return function() {
-                        infowindow.setContent(data[i]['location'] + data[i]['description']);
+                        infowindow.setContent(data[i]['location'] + data[i]['garbage_type']);
                         infowindow.open(map, marker);
                     };
                 }

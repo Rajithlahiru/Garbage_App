@@ -6,3 +6,6 @@ class Vehicle(models.Model):
     vehicle_model = models.CharField(max_length=100)
     vehicle_no = models.CharField(max_length=50)
     owner_name= models.CharField(max_length=100)
+
+def __str__(self):
+    return self.vehicle_type

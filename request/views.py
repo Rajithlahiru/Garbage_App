@@ -18,6 +18,14 @@ class RequestList(APIView):
     def post(self):
         pass
 
+
+
+
+
+
+
+
+    
 class LocationApi(APIView):
     def get(self,request):
         locations = Request.objects.all()

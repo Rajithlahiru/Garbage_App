@@ -18,6 +18,7 @@
     </thead>
     <tbody>
         {% for user in user_list %}
+            <tr>
             <td>{{user.username}}</td>
             <td>{{user.mobile_no}}</td>
             <td>{{user.nic}}</td>
@@ -35,6 +36,7 @@
                     </button>
                 </form>
             </td>
+            </tr>
         {% endfor %}
     </tbody>
 </table>

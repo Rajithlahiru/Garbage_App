@@ -9,4 +9,5 @@ class User(models.Model):
     nic = models.CharField(max_length=100)
     address = models.CharField(max_length=255)
      
-
+def __str__(self):
+    return self.username

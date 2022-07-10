@@ -275,3 +275,12 @@
     background: var(--dark);
     border-color: var(--primary);
 }
+
+.map{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    padding: 0 px;
+}

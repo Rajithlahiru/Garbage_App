@@ -11,10 +11,6 @@ class RequestSerializer(serializers.ModelSerializer):
         fields = '__all__'
 
 class LocationSerializer(serializers.ModelSerializer):
-    address = Request.objects.all().last()
-    location = geocoder.osm(address)
-    lat = location.lat
-    lng = location.lng
     class Meta:
         model = Request
-        fields = ['location']
+        fields = ['location','longitude','latitude','garbage_type']
