@@ -2,7 +2,7 @@ var map;
 var latlng;
 var infowindow;
 $(document).ready(function() {
-    //get data set from the backend in a json structure
+    // get data set from the backend in a json structure
     // var data = [{
     //         "description": "Location A",
     //         "location": "kurunegala",
@@ -18,7 +18,7 @@ $(document).ready(function() {
     // ]
     //if backend servie ready
     $.ajax({ //library for JS help front-end to talk back-end, without having to reload the page
-      url: "request/locations/",
+      url: "http://127.0.0.1:8000/request/locations/",
       async: true,
       dataType: 'json', // is a language
       success: function (data) {
@@ -27,7 +27,7 @@ $(document).ready(function() {
       }
     }); 
     console.log(data);
-    // ViewCustInGoogleMap(data);
+    ViewCustInGoogleMap(data);
 });
 function ViewCustInGoogleMap(data) {
     var gm = google.maps; //create instance of google map
