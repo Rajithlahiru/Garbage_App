@@ -1,5 +1,6 @@
 from django import forms
 from .models import Vehicle
+from user_register.models import User
 
 class VehicleForm(forms.ModelForm):
 
