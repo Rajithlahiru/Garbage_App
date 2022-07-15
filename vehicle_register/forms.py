@@ -13,3 +13,4 @@ class VehicleForm(forms.ModelForm):
             'vehicle_no':'Vehicle Number',
             'owner_name':'Owner Name',
         }
+        
