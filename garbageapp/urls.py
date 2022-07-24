@@ -22,7 +22,6 @@ urlpatterns = [
     path('dashboard/', include('dashboard.urls')),
     path('user/', include('user_register.urls')),
     path('vehicle/', include('vehicle_register.urls')),
-    path('gmap/', include('g_map.urls')),
 
     #REST FRAMEWORK URLS
     path('', include('request.urls')),

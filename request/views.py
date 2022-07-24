@@ -33,7 +33,7 @@ class LocationApi(APIView):
         locations = Request.objects.all()
         serializer = LocationSerializer(locations, many = True)
         return Response(serializer.data)
-
+    
 class RequestDetails(APIView):
     
     def get_request(self,pid):
