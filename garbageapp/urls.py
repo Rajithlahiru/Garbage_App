@@ -26,6 +26,7 @@ urlpatterns = [
     #REST FRAMEWORK URLS
     path('', include('request.urls')),
     path('auth/', include('authentication.urls')),
+    path('',include('garbage.urls')),
 ]
 
 
