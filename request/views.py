@@ -6,8 +6,32 @@ from .models import Request
 from .serializers import LocationSerializer, RequestSerializer
 from request import serializers
 from rest_framework import status
-
+from rest_framework import mixins
+from rest_framework.generics import GenericAPIView
 # Create your views here.
+
+
+class Request(mixins.ListModelMixin, mixins.CreateModelMixin, mixins.UpdateModelMixin, mixins.DestroyModelMixin, GenericAPIView, mixins.RetrieveModelMixin):
+
+    serializer_class = RequestSerializer
+    queryset = Request.objects.all()
+
+    def get(self, request, pk=None):
+        if (pk) :
+            print( "sdasadsa", pk);
+            return self.retrieve(request)
+        return self.list(request)
+
+    def post(self, request, *args, **kwargs):
+        return self.create(request, *args, **kwargs)
+
+    def put(self, request, *args, **kwargs):
+        return self.update(request, *args, **kwargs)
+
+    def delete(self, request, *args, **kwargs):
+        return self.destroy(request, *args, **kwargs)
+
+
 
 class NotFoundException(Exception):
     pass

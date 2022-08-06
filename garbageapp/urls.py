@@ -24,8 +24,9 @@ urlpatterns = [
     path('vehicle/', include('vehicle_register.urls')),
 
     #REST FRAMEWORK URLS
-    path('', include('request.urls')),
-    path('auth/', include('authentication.urls')),
+    path('api/', include('request.urls')),
+    path('api/auth/', include('authentication.urls')),
+    # path('register/', include('authentication.urls')),
     path('',include('garbage.urls')),
 ]
 

@@ -3,7 +3,7 @@ import imp
 from pyexpat import model
 from rest_framework import serializers
 from .models import Request
-import geocoder
+
 
 class RequestSerializer(serializers.ModelSerializer):
     class Meta:
@@ -13,4 +13,4 @@ class RequestSerializer(serializers.ModelSerializer):
 class LocationSerializer(serializers.ModelSerializer):
     class Meta:
         model = Request
-        fields = ['location','longitude','latitude','garbage_type']
+        fields = ['location','longitude','latitude','garbage_type','status']
