@@ -4,10 +4,8 @@
 {% block content %}
 <form action="" method="post" autocomplete="off">
     {% csrf_token %}
-    {{form.vehicle_type|as_crispy_field}}
-    {{form.vehicle_model|as_crispy_field}}
-    {{form.vehicle_no|as_crispy_field}}
-    {{form.owner_name|as_crispy_field}}
+    {{ form.as_p }}
+    <br>
     <div class="row">
         <div class="col-md-8">
             <button type="submit" class="btn btn-success btn-block btn-lg"><i class="fas fa-database"></i> Submit</button>

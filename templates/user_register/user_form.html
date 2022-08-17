@@ -4,24 +4,7 @@
 {% block content %}
 <form action="" method="post" autocomplete="off">
     {% csrf_token %}
-    {{form.username|as_crispy_field}}
-    <div class="row">
-        <div class="col-md-4">
-            {{form.email|as_crispy_field}}
-        </div>
-        <div class="col-md-8">
-            {{form.password|as_crispy_field}}
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-md-4">
-            {{form.mobile_no|as_crispy_field}}
-        </div>
-        <div class="col-md-4">
-            {{form.nic|as_crispy_field}}
-        </div>
-    </div>
-    {{form.address|as_crispy_field}}
+    {{ form.as_p }}
     <div class="row">
         <div class="col-md-8">
             <button type="submit" class="btn btn-success btn-block btn-lg"><i class="fas fa-database"></i> Submit</button>
@@ -33,4 +16,5 @@
         </div>
     </div>
 </form>
+</div>
 {% endblock content %}

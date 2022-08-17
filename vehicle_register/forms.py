@@ -13,4 +13,11 @@ class VehicleForm(forms.ModelForm):
             'vehicle_no':'Vehicle Number',
             'owner_name':'Owner Name',
         }
+
+        widgets = {
+            'vehicle_type': forms.TextInput(attrs ={'class': 'form-control'}),
+            'vehicle_model': forms.TextInput(attrs ={'class': 'form-control'}),
+            'vehicle_no': forms.TextInput(attrs ={'class': 'form-control'}),
+            'owner_name': forms.TextInput(attrs ={'class': 'form-control'}),
+        }
         
