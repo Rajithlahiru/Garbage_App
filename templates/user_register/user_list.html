@@ -2,18 +2,19 @@
 
 {% block content %}
 
+<a href="{% url 'user_insert' %}" class="btn btn-outline-success">
+    <i class="fas fa-plus"></i> Add New
+</a>
+<br><br>
+
 <table class="table table-success table-striped">
     <thead class="table-dark">
-        <tr>
+        <tr >
             <td>Username</td>
             <td>Mobile no</td>
             <td>NIC</td>
             <td>Address</td>
-            <td> 
-                <a href="{% url 'user_insert' %}" class="btn btn-outline-success">
-                    <i class="fas fa-plus"></i> Add New
-                </a>
-            </td>
+            <td> </td>
         </tr>
     </thead>
     <tbody>

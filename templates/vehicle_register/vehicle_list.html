@@ -2,6 +2,10 @@
 
 {% block content %}
 
+<a href="{% url 'vehicle_insert' %}" class="btn btn-outline-success">
+    <i class="fas fa-plus"></i> Add New
+</a>
+<br><br>
 <table class="table table-success table-striped">
     <thead class="table-dark">
         <tr>
@@ -9,11 +13,7 @@
             <td>Vehicle Model</td>
             <td>Vehicle Number</td>
             <td>Owner Name</td>
-            <td> 
-                <a href="{% url 'vehicle_insert' %}" class="btn btn-outline-success">
-                    <i class="fas fa-plus"></i> Add New
-                </a>
-            </td>
+            <td> </td>
         </tr>
     </thead>
     <tbody>
