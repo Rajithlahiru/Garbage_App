@@ -1,6 +1,82 @@
 {% extends "base\base.html" %}
 
 {% block content %}
+
+<div class="container">
+    <div class="row mt-4">
+        <div class="col-md-4">
+            <div class="card">
+                <div class="card-header bg-primary text-white">
+                    Information
+                </div>
+                <div class="card-body">
+                    <marquee behavior="" direction="">
+                        <h3 class="my-3">This is a Summary </h3>
+                    </marquee>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-8">
+            <div class="card">
+                <div class="card-header bg-primary text-white">
+                    Statistic
+                </div>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <a class="text-decoration-none text-dark" href="">
+                                <div class="card text-center p-3">
+                                    <h4>
+                                        Users
+                                        <i class="fas fa-users"></i>
+                                    </h4>
+                                    <h3>
+                                        40
+                                    </h3>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col-md-4">
+                            <a class="text-decoration-none text-dark" href="">
+                                <div class="card text-center p-3">
+                                    <h4>
+                                        Vehicles
+                                        <i class="fa fa-truck me-2"></i>
+                                    </h4>
+                                    <h3>
+                                        10
+                                    </h3>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col-md-4">
+                            <a class="text-decoration-none text-dark" href="">
+                                <div class="card text-center p-3">
+                                    <h4>
+                                        Requests
+                                        <i class="fas fa-shipping-fast"></i>
+                                    </h4>
+                                    <h3>
+                                        20
+                                    </h3>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+</div>
+
+
+
+
+
+
+
 <!-- Chart Start -->
 
 <div class="row mt-5 d-flex justify-content-xs-between">
@@ -91,17 +167,17 @@
     </div>
     <div class="col-md-4">
         <br>
-        <h4>Number of Garbage requests</h4>
+        <h4>Garbage collected details</h4>
         <canvas id="myChart3" width="400" height="400"></canvas>
                     <script>
                     const ctz = document.getElementById('myChart3').getContext('2d');
                     const myChart3 = new Chart(ctz, {
-                        type: 'polarArea',
+                        type: 'doughnut',
                         data: {
-                            labels: ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'],
+                            labels: ['Garbage Request', 'Collected Garbage Request'],
                             datasets: [{
                                 label: 'garbage request',
-                                data: [5, 3, 5, 7, 10, 12],
+                                data: [5, 3],
                                 backgroundColor: [
                                     'rgba(255, 99, 132, 0.2)',
                                     'rgba(54, 162, 235, 0.2)',
