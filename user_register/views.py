@@ -6,7 +6,11 @@ from .models import User
 
 # Create your views here.
 def user_list(request):
-    context = {'user_list':User.objects.all()}
+    users = User.objects.all()
+    # users_count = users.count()
+    context = {
+        'user_list':users,
+    }
     return render(request,'user_register/user_list.html',context)
 
 def user_form(request, id=0):

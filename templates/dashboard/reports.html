@@ -7,11 +7,11 @@
         <div class="col-md-4">
             <div class="card">
                 <div class="card-header bg-primary text-white">
-                    Information
+                    Admin Panel
                 </div>
                 <div class="card-body">
                     <marquee behavior="" direction="">
-                        <h3 class="my-3">This is a Summary </h3>
+                        <h3 class="my-3">Statistics</h3>
                     </marquee>
                 </div>
             </div>
@@ -20,32 +20,32 @@
         <div class="col-md-8">
             <div class="card">
                 <div class="card-header bg-primary text-white">
-                    Statistic
+                    Dashboard Statistics
                 </div>
                 <div class="card-body">
                     <div class="row">
                         <div class="col-md-4">
-                            <a class="text-decoration-none text-dark" href="">
+                            <a class="text-decoration-none text-dark" href="{% url 'user_list' %}">
                                 <div class="card text-center p-3">
                                     <h4>
                                         Users
                                         <i class="fas fa-users"></i>
                                     </h4>
                                     <h3>
-                                        40
+                                        7 {{ users_count }}
                                     </h3>
                                 </div>
                             </a>
                         </div>
                         <div class="col-md-4">
-                            <a class="text-decoration-none text-dark" href="">
+                            <a class="text-decoration-none text-dark" href="{% url 'vehicle_list' %}">
                                 <div class="card text-center p-3">
                                     <h4>
                                         Vehicles
                                         <i class="fa fa-truck me-2"></i>
                                     </h4>
                                     <h3>
-                                        10
+                                        4 {{vehicle_count}}
                                     </h3>
                                 </div>
                             </a>
@@ -92,7 +92,7 @@
                             labels: ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'],
                             datasets: [{
                                 label: 'no of user registrations',
-                                data: [5, 3, 5, 7, 10, 12],
+                                data: [5, 3, 5, 7, 10, 12,14],
                                 backgroundColor: [
                                     'rgba(255, 99, 132, 0.2)',
                                     'rgba(54, 162, 235, 0.2)',
@@ -135,7 +135,7 @@
                             labels: ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'],
                             datasets: [{
                                 label: 'garbage request',
-                                data: [5, 3, 5, 7, 10, 12],
+                                data: [5, 3, 5, 7, 10, 12,15],
                                 backgroundColor: [
                                     'rgba(255, 99, 132, 0.2)',
                                     'rgba(54, 162, 235, 0.2)',
