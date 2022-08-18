@@ -9,21 +9,21 @@
 <table class="table table-success table-striped">
     <thead class="table-dark">
         <tr>
-            <td>Vehicle Type</td>
-            <td>Vehicle Model</td>
-            <td>Vehicle Number</td>
-            <td>Owner Name</td>
-            <td> </td>
+            <td style="text-align: center;">Vehicle Type</td>
+            <td style="text-align: center;">Vehicle Model</td>
+            <td style="text-align: center;">Vehicle Number</td>
+            <td style="text-align: center;">Owner Name</td>
+            <td style="text-align: center;"> </td>
         </tr>
     </thead>
     <tbody>
         {% for vehicle in vehicle_list %}
             <tr>
-            <td>{{vehicle.vehicle_type}}</td>
-            <td>{{vehicle.vehicle_model}}</td>
-            <td>{{vehicle.vehicle_no}}</td>
-            <td>{{vehicle.owner_name}}</td>
-            <td>
+            <td style="text-align: center;">{{vehicle.vehicle_type}}</td>
+            <td style="text-align: center;">{{vehicle.vehicle_model}}</td>
+            <td style="text-align: center;">{{vehicle.vehicle_no}}</td>
+            <td style="text-align: center;">{{vehicle.owner_name}}</td>
+            <td style="text-align: center;">
                 <a href="{% url 'vehicle_update' vehicle.id %}" class="btn text-secondary px-0">
                     <i class="fa fa-edit fa-lg">
                         

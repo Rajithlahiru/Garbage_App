@@ -1,4 +1,5 @@
 from dataclasses import field
+from logging import PlaceHolder
 from pyexpat import model
 from django import forms
 from .models import User
@@ -19,10 +20,10 @@ class UserForm(forms.ModelForm):
         }
 
         widgets = {
-            'username': forms.TextInput(attrs ={'class': 'form-control'}),
-            'email': forms.EmailInput(attrs ={'class': 'form-control'}),
-            'password': forms.TextInput(attrs ={'class': 'form-control'}),
-            'mobile_no': forms.TextInput(attrs ={'class': 'form-control'}),
-            'nic': forms.TextInput(attrs ={'class': 'form-control'}),
-            'address': forms.TextInput(attrs ={'class': 'form-control'}),
+            'username': forms.TextInput(attrs ={'class': 'form-control','placeholder':'Enter your name here'}),
+            'email': forms.EmailInput(attrs ={'class': 'form-control','placeholder':'name@example.com'}),
+            'password': forms.TextInput(attrs ={'class': 'form-control','placeholder':'Enter a password'}),
+            'mobile_no': forms.TextInput(attrs ={'class': 'form-control','placeholder':'+94 *********'}),
+            'nic': forms.TextInput(attrs ={'class': 'form-control','placeholder':'Enter your NIC'}),
+            'address': forms.TextInput(attrs ={'class': 'form-control','placeholder':'Enter your Address'}),
         }
