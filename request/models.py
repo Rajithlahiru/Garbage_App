@@ -1,3 +1,5 @@
+import email
+from statistics import mode
 from django.db import models
 
 class Request(models.Model):
@@ -11,3 +13,11 @@ class Request(models.Model):
 
     def __str__(self):
         return self.status
+
+
+class complain(models.Model):
+    email = models.EmailField()
+    detail = models.TextField()
+
+    def __str__(self):
+        return self.complain_id
