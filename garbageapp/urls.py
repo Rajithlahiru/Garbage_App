@@ -22,6 +22,7 @@ urlpatterns = [
     path('dashboard/', include('dashboard.urls')),
     path('user/', include('user_register.urls')),
     path('vehicle/', include('vehicle_register.urls')),
+    path('complain/', include('complain.urls')),
 
     #REST FRAMEWORK URLS
     path('api/', include('request.urls')),

@@ -1,0 +1,16 @@
+{% extends "base\base.html" %}
+
+{% block content %}
+
+<a href="{% url 'vehicle_insert' %}" class="btn btn-outline-success">
+    <i class="fas fa-plus"></i> Add New
+</a>
+<br><br>
+
+{% for complain in complain_list %}
+
+{{ complain.detail}}
+
+{% endfor %}
+
+{% endblock content %}

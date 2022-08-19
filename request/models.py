@@ -15,9 +15,3 @@ class Request(models.Model):
         return self.status
 
 
-class complain(models.Model):
-    email = models.EmailField()
-    detail = models.TextField()
-
-    def __str__(self):
-        return self.complain_id

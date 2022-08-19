@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     'vehicle_register',
     'request',
     'garbage',
+    'complain',
 ]
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'

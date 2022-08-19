@@ -1,6 +1,9 @@
 from django.shortcuts import render
 from user_register.models import User
-from vehicle_register.models import Vehicle 
+from vehicle_register.models import Vehicle
+import datetime
+
+ 
 
 # Create your views here.
 def index(request):
@@ -12,8 +15,11 @@ def report(request):
 def reports(request):
     users_count = User.objects.all().count()
     vehicle_count = Vehicle.objects.all().count()
+    x = datetime.datetime.now()
     context = {
         'users_count':users_count,
-        'vehicle_count':vehicle_count
+        'vehicle_count':vehicle_count,
+        'a': '7',
+        'date':'x'
     }
     return render(request,'dashboard/reports.html',context)

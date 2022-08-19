@@ -2,7 +2,7 @@ from dataclasses import field, fields
 import imp
 from pyexpat import model
 from rest_framework import serializers
-from .models import Request, complain
+from .models import Request
 
 
 class RequestSerializer(serializers.ModelSerializer):
@@ -15,8 +15,3 @@ class LocationSerializer(serializers.ModelSerializer):
         model = Request
         fields = ['location','longitude','latitude','garbage_type','status']
 
-class ComplainSerializer(serializers.ModelSerializer):
-
-    class Meta:
-        model = complain
-        field = '__all__'

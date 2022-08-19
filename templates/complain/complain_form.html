@@ -1,0 +1,14 @@
+{% extends "base\base.html" %}
+
+{% block content %}
+<form action="" method="post" autocomplete="off">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <div class="row">
+        <div class="col-md-8">
+            <button type="submit" class="btn btn-warning btn-block btn-lg"><i class="fas fa-comment"></i> Submit</button>
+        </div>
+    </div>
+</form>
+</div>
+{% endblock content %}

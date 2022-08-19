@@ -1,7 +1,7 @@
 from multiprocessing import context
 import re
 from django.shortcuts import redirect, render
-from .forms import VehicleForm
+from .forms import VehicleForm,UserListForm
 from .models import Vehicle
 
 # Create your views here.
@@ -13,10 +13,12 @@ def vehicle_form(request, id=0):
     if request.method == "GET":
         if id==0:
             form = VehicleForm()
+            a=UserListForm()
         else:
             vehicle = Vehicle.objects.get(pk=id)
             form = VehicleForm(instance=vehicle)
-        return render(request, 'vehicle_register/vehicle_form.html', {'form':form})
+            a=UserListForm()
+        return render(request, 'vehicle_register/vehicle_form.html', {'form':form,'a':a})
     else:
         if id==0:
             form = VehicleForm(request.POST)

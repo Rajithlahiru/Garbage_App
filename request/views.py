@@ -3,11 +3,13 @@ from msilib.schema import Class
 from rest_framework.views import APIView
 from rest_framework.response import Response
 from .models import Request
-from .serializers import LocationSerializer, RequestSerializer, ComplainSerializer
+from .serializers import LocationSerializer, RequestSerializer
 from request import serializers
 from rest_framework import status
 from rest_framework import mixins
 from rest_framework.generics import GenericAPIView
+
+
 # Create your views here.
 
 
@@ -104,17 +106,3 @@ class RequestDetails(APIView):
         
 
 
-class Complain(APIView):
-
-    def get(self,request):
-        complains = Complain.objects.all()
-        serializer = ComplainSerializer(complains,many=True)
-        return Response(serializer.data)
-
-    def post(self,request):
-
-        serializer = ComplainSerializer(data=request.data)
-        if serializer.is_valid():
-            serializer.save()
-            return Response(serializer.data, status=status.HTTP_201_CREATED)
-        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST) 
