@@ -1,6 +1,8 @@
 {% extends "base\base.html" %}
 
 {% block content %}
+
+<div class="container">
 <form action="" method="post" autocomplete="off">
     {% csrf_token %}
     {{ form.as_p }}
@@ -8,7 +10,13 @@
         <div class="col-md-8">
             <button type="submit" class="btn btn-warning btn-block btn-lg"><i class="fas fa-comment"></i> Submit</button>
         </div>
+        <div class="col-md-4">
+            <a href="{% url 'complain_list' %}" class="btn btn-secondary btn-block btn-lg">
+                <i class="fas fa-stream"></i> Back to list
+            </a>
+        </div>
     </div>
 </form>
+</div>
 </div>
 {% endblock content %}

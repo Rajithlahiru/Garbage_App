@@ -1,6 +1,7 @@
 {% extends "base\base.html" %}
 
 {% block content %}
+<div class="container">
 
 <a href="{% url 'user_insert' %}" class="btn btn-outline-success">
     <i class="fas fa-plus"></i> Add New
@@ -43,5 +44,6 @@
         {% endfor %}
     </tbody>
 </table>
+</div>
 
 {% endblock content %}

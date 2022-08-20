@@ -1,6 +1,7 @@
 {% extends "base\base.html" %}
 
 {% block content %}
+<div class="container">
 <form action="" method="post" autocomplete="off">
     {% csrf_token %}
     {{ form.as_p }}
@@ -20,4 +21,5 @@
         </div>
     </div>
 </form>
+</div>
 {% endblock content %}

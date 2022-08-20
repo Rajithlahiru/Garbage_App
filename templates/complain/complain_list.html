@@ -1,16 +1,28 @@
 {% extends "base\base.html" %}
 
+
 {% block content %}
 
-<a href="{% url 'vehicle_insert' %}" class="btn btn-outline-success">
+<div class="container">
+<a href="{% url 'complain_insert' %}" class="btn btn-outline-success">
     <i class="fas fa-plus"></i> Add New
 </a>
 <br><br>
 
+<center><h4>Complains</h4></center>
+
 {% for complain in complain_list %}
+<div class="list-group">
+    <a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
+      <div class="d-flex w-100 justify-content-between">
+        <h5 class="mb-1">{{ complain.email }}</h5>
+      </div>
+      <p class="mb-1">{{ complain.detail}}</p>
+    </a>
+    <br>
+  </div>
+  
 
-{{ complain.detail}}
-
-{% endfor %}
-
+  {% endfor %}
+</div>
 {% endblock content %}

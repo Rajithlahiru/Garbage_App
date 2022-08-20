@@ -3,10 +3,10 @@ import email
 from statistics import mode
 
 # Create your models here.
-class complain(models.Model):
-    req_id = models.IntegerField()
+class Complain(models.Model):
     email = models.EmailField()
     detail = models.TextField()
+    
 
     def __str__(self):
-        return self.complain_id
+        return self.email
