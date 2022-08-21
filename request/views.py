@@ -1,4 +1,4 @@
-import imp
+from .models import Request
 from msilib.schema import Class
 from rest_framework.views import APIView
 from rest_framework.response import Response
@@ -106,3 +106,7 @@ class RequestDetails(APIView):
         
 
 
+# class RequestCount(APIView):
+#     def get(self,pid):
+#         count = models.Request.objects.filter(username='username', status=0).count()
+#         return count

@@ -11,12 +11,12 @@ class complainForm(forms.ModelForm):
         fields = '__all__'
         labels = {
             'email':'E-mail',
-            # 'req_id':'Request ID',
+            'req_id':'Request ID',
             'detail': 'Complain'
         }
 
         widgets = {
             'email': forms.EmailInput(attrs ={'class': 'form-control'}),
-            # 'req_id': forms.TextInput(attrs={'class':'form-control'}),
+            'req_id': forms.TextInput(attrs={'class':'form-control'}),
             'detail': forms.Textarea(attrs={'class':'form-control'})
         }

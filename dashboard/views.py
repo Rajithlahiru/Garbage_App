@@ -2,6 +2,8 @@ from django.shortcuts import render
 from user_register.models import User
 from vehicle_register.models import Vehicle
 import datetime
+import json
+from urllib.request import urlopen
 
  
 
@@ -10,16 +12,17 @@ def index(request):
     return render(request, 'base/base.html')
 
 def report(request):
-    return render(request, 'dashboard/reports.html')
-
-def reports(request):
+    response = urlopen('http://127.0.0.1:8000/api/request/')
+    data = json.loads(response.read())
     users_count = User.objects.all().count()
     vehicle_count = Vehicle.objects.all().count()
-    x = datetime.datetime.now()
+    var = datetime.date.today()
+    formatDate = var.strftime("%d-%b-%y")
     context = {
         'users_count':users_count,
-        'vehicle_count':vehicle_count,
-        'a': '7',
-        'date':'x'
+        'vehicle_count': vehicle_count,
+        'formatDate':formatDate,
+        'currentDate':var,
+        'data':data
     }
     return render(request,'dashboard/reports.html',context)

@@ -1,15 +1,16 @@
 {% extends "base\base.html" %}
+{% load crispy_forms_tags %}
 
 {% block content %}
 <div class="container">
 <form action="" method="post" autocomplete="off">
     {% csrf_token %}
     {{ form.as_p }}
-    {{a}}
+    {{a|crispy}}
 
 
 
-<br>
+<br> <br>
     <div class="row">
         <div class="col-md-8">
             <button type="submit" class="btn btn-success btn-block btn-lg"><i class="fas fa-database"></i> Submit</button>
