@@ -8,7 +8,7 @@ from request import serializers
 from rest_framework import status
 from rest_framework import mixins
 from rest_framework.generics import GenericAPIView
-import requests
+# import requests
 from complain.models import Complain
 
 
