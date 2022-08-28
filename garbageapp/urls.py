@@ -27,6 +27,7 @@ urlpatterns = [
     #REST FRAMEWORK URLS
     path('api/', include('request.urls')),
     path('api/auth/', include('authentication.urls')),
+
     # path('register/', include('authentication.urls')),
     path('',include('garbage.urls')),
 ]

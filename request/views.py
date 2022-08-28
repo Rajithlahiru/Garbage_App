@@ -3,14 +3,13 @@ from msilib.schema import Class
 from rest_framework.views import APIView
 from rest_framework.response import Response
 from .models import Request
-from .serializers import LocationSerializer, RequestSerializer
+from .serializers import LocationSerializer, RequestSerializer,ComplainSerializer
 from request import serializers
 from rest_framework import status
 from rest_framework import mixins
 from rest_framework.generics import GenericAPIView
-
-
-# Create your views here.
+import requests
+from complain.models import Complain
 
 
 class Request(mixins.ListModelMixin, mixins.CreateModelMixin, mixins.UpdateModelMixin, mixins.DestroyModelMixin, GenericAPIView, mixins.RetrieveModelMixin):
@@ -28,10 +27,40 @@ class Request(mixins.ListModelMixin, mixins.CreateModelMixin, mixins.UpdateModel
         return self.create(request, *args, **kwargs)
 
     def put(self, request, *args, **kwargs):
-        return self.update(request, *args, **kwargs)
+        req =self.update(request, *args, **kwargs)
+        print(request.data["mobile_no"])
+        r = requests.get("https://app.notify.lk/api/v1/send?user_id=23370&api_key=VcYYcYck6rUJbMx6WiRJ&sender_id=NotifyDEMO&to=94"+request.data["mobile_no"]+"&message=Your  garbage collected")
+
+        print(r.json())
+        return req
 
     def delete(self, request, *args, **kwargs):
         return self.destroy(request, *args, **kwargs)
+
+
+
+
+class Complain(mixins.ListModelMixin, mixins.CreateModelMixin, mixins.UpdateModelMixin, mixins.DestroyModelMixin, GenericAPIView, mixins.RetrieveModelMixin):
+
+    serializer_class = ComplainSerializer
+    queryset = Complain.objects.all()
+
+    def get(self, request, pk=None):
+        if (pk) :
+
+            return self.retrieve(request)
+        return self.list(request)
+
+    def post(self, request, *args, **kwargs):
+        return self.create(request, *args, **kwargs)
+
+    def put(self, request, *args, **kwargs):
+        req =self.update(request, *args, **kwargs)
+        return req
+
+    def delete(self, request, *args, **kwargs):
+        return self.destroy(request, *args, **kwargs)
+
 
 
 

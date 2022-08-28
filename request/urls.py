@@ -7,4 +7,8 @@ urlpatterns =[
     path('request/<int:pk>',views.Request.as_view()),
     # path('count/',views.RequestCount.as_view()),
 
+    path('complain/',views.Complain.as_view()),
+    # path('request/locations/',views.LocationApi.as_view()),
+    path('complain/<int:pk>',views.Complain.as_view()),
+    # path('count/',views.RequestCount.as_view()),
 ]
