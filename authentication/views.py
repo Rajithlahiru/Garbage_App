@@ -30,7 +30,7 @@ class Register(mixins.ListModelMixin, mixins.CreateModelMixin, mixins.UpdateMode
     queryset = User.objects.all()
 
     def get(self, request, pk=None):
-        if (pk) :
+        if (pk) : 
             print( "sdasadsa", pk);
             return self.retrieve(request)
         return self.list(request)
@@ -48,41 +48,6 @@ class Register(mixins.ListModelMixin, mixins.CreateModelMixin, mixins.UpdateMode
 
 
 class Login(mixins.ListModelMixin, mixins.CreateModelMixin, mixins.UpdateModelMixin, mixins.DestroyModelMixin, GenericAPIView, mixins.RetrieveModelMixin):
-
-    serializer_class = LoginSerializer
-    queryset = User.objects.all()
-
-    def get(self, request, pk=None):
-        queryset = User.objects.all()
-        if (pk) :
-            print( "sdasadsa", pk);
-            return queryset.filter(id=1)
-            return self.retrieve(request)
-        return self.list(request)
-
-    def post(self, request, *args, **kwargs):
-        queryset = User.objects.all()
-        print(queryset.filter(email=request.data['email'],password=request.data['password']))
-        try:
-            return JsonResponse({'status': 'SUCCESS','id':queryset.filter(email=request.data['email'],password=request.data['password'])[0].id})
-        except:
-            return JsonResponse({'status': 'Someting Went Wrang'})
-
-
-
-
-
-        return self.create(request, *args, **kwargs)
-
-    def put(self, request, *args, **kwargs):
-        return self.update(request, *args, **kwargs)
-
-    def delete(self, request, *args, **kwargs):
-        return self.destroy(request, *args, **kwargs)
-
-
-
-class User(mixins.ListModelMixin, mixins.CreateModelMixin, mixins.UpdateModelMixin, mixins.DestroyModelMixin, GenericAPIView, mixins.RetrieveModelMixin):
 
     serializer_class = LoginSerializer
     queryset = User.objects.all()
