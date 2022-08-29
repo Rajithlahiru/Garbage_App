@@ -18,7 +18,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 PROJECT_APP_PATH = '/home/ubuntu/Garbage_App'
 
 # BASE_DIR = "./"
-print (BASE_DIR)
+print (os.path.join(PROJECT_APP_PATH, '/templates/')
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
 
