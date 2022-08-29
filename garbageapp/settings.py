@@ -15,6 +15,8 @@ import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
+PROJECT_APP_PATH = os.path.dirname(os.path.abspath(__file__))
+
 # BASE_DIR = "./"
 print (BASE_DIR)
 # Quick-start development settings - unsuitable for production
@@ -69,7 +71,7 @@ CORS_ALLOW_ALL_ORIGINS = True
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR, '/templates/')],
+        'DIRS': [os.path.join(PROJECT_APP_PATH, '/templates/')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
