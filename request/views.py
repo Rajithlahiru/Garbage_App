@@ -1,5 +1,5 @@
 from .models import Request
-from msilib.schema import Class
+# from msilib.schema import Class
 from rest_framework.views import APIView
 from rest_framework.response import Response
 from .models import Request
