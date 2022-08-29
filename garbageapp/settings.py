@@ -71,7 +71,7 @@ CORS_ALLOW_ALL_ORIGINS = True
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(PROJECT_APP_PATH, '/templates/')],
+        'DIRS': ['/home/ubuntu/Garbage_App/templates/'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
