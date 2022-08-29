@@ -11,7 +11,7 @@ def complain_list(request):
     context = {
         'complain_list':complains
         }
-    return render(request,'complain/complain_list.html',context)
+    return render(request,'templates/complain/complain_list.html',context)
 
 def complain_form(request, id=0):
     if request.method == "GET":
