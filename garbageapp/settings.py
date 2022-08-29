@@ -15,7 +15,7 @@ import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
-PROJECT_APP_PATH = '/Garbage_App'
+PROJECT_APP_PATH = '/home/ubuntu/Garbage_App'
 
 # BASE_DIR = "./"
 print (os.path.join(PROJECT_APP_PATH, '/templates/'))
