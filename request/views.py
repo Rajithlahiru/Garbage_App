@@ -8,7 +8,7 @@ from request import serializers
 from rest_framework import status
 from rest_framework import mixins
 from rest_framework.generics import GenericAPIView
-# import requests
+import requests
 from complain.models import Complain
 
 
@@ -29,9 +29,9 @@ class Request(mixins.ListModelMixin, mixins.CreateModelMixin, mixins.UpdateModel
     def put(self, request, *args, **kwargs):
         req =self.update(request, *args, **kwargs)
         print(request.data["mobile_no"])
-        # r = requests.get("https://app.notify.lk/api/v1/send?user_id=23370&api_key=VcYYcYck6rUJbMx6WiRJ&sender_id=NotifyDEMO&to=94"+request.data["mobile_no"]+"&message=Your  garbage collected")
-        #
-        # print(r.json())
+        r = requests.get("https://app.notify.lk/api/v1/send?user_id=23370&api_key=VcYYcYck6rUJbMx6WiRJ&sender_id=NotifyDEMO&to=94"+str(request.data["mobile_no"])+"&message=Your  garbage collected")
+        
+        print(r.json())
         return req
 
     def delete(self, request, *args, **kwargs):

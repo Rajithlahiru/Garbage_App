@@ -62,6 +62,8 @@ class Login(mixins.ListModelMixin, mixins.CreateModelMixin, mixins.UpdateModelMi
 
     def post(self, request, *args, **kwargs):
         queryset = User.objects.all()
+        print(request.data['email'])
+        print(request.data['password'])
         print(queryset.filter(email=request.data['email'],password=request.data['password']))
         try:
             return JsonResponse({'status': 'SUCCESS','id':queryset.filter(email=request.data['email'],password=request.data['password'])[0].id})

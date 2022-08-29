@@ -1,8 +1,7 @@
 import logging
-import warnings
 from os import PathLike
 from os.path import basename, splitext
-from typing import Any, BinaryIO, List, Optional, Set
+from typing import BinaryIO, List, Optional, Set
 
 from .cd import (
     coherence_ratio,
@@ -37,8 +36,8 @@ def from_bytes(
     steps: int = 5,
     chunk_size: int = 512,
     threshold: float = 0.2,
-    cp_isolation: Optional[List[str]] = None,
-    cp_exclusion: Optional[List[str]] = None,
+    cp_isolation: List[str] = None,
+    cp_exclusion: List[str] = None,
     preemptive_behaviour: bool = True,
     explain: bool = False,
 ) -> CharsetMatches:
@@ -487,8 +486,8 @@ def from_fp(
     steps: int = 5,
     chunk_size: int = 512,
     threshold: float = 0.20,
-    cp_isolation: Optional[List[str]] = None,
-    cp_exclusion: Optional[List[str]] = None,
+    cp_isolation: List[str] = None,
+    cp_exclusion: List[str] = None,
     preemptive_behaviour: bool = True,
     explain: bool = False,
 ) -> CharsetMatches:
@@ -509,12 +508,12 @@ def from_fp(
 
 
 def from_path(
-    path: "PathLike[Any]",
+    path: PathLike,
     steps: int = 5,
     chunk_size: int = 512,
     threshold: float = 0.20,
-    cp_isolation: Optional[List[str]] = None,
-    cp_exclusion: Optional[List[str]] = None,
+    cp_isolation: List[str] = None,
+    cp_exclusion: List[str] = None,
     preemptive_behaviour: bool = True,
     explain: bool = False,
 ) -> CharsetMatches:
@@ -536,22 +535,17 @@ def from_path(
 
 
 def normalize(
-    path: "PathLike[Any]",
+    path: PathLike,
     steps: int = 5,
     chunk_size: int = 512,
     threshold: float = 0.20,
-    cp_isolation: Optional[List[str]] = None,
-    cp_exclusion: Optional[List[str]] = None,
+    cp_isolation: List[str] = None,
+    cp_exclusion: List[str] = None,
     preemptive_behaviour: bool = True,
 ) -> CharsetMatch:
     """
     Take a (text-based) file path and try to create another file next to it, this time using UTF-8.
     """
-    warnings.warn(
-        "normalize is deprecated and will be removed in 3.0",
-        DeprecationWarning,
-    )
-
     results = from_path(
         path,
         steps,

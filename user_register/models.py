@@ -9,7 +9,7 @@ class User(models.Model):
     mobile_no = models.IntegerField(default="")
     nic = models.CharField(max_length=100)
     address = models.CharField(max_length=255)
-    type = models.CharField(max_length=255)
+    type = models.CharField(max_length=255,default='DRIVER')
      
 def __str__(self):
     return self.username
