@@ -176,18 +176,23 @@
 <div class="row mt-5 d-flex justify-content-xs-between">
     <div class="col-md-4">
         <br>
-        <h3>User Registrations</h3>
+        <h3>Garbage Details</h3>
         <canvas id="myChartx" width="400" height="400"></canvas>
                     <script>
-                    
+                    var glass = parseInt("{{glass}}")
+                    var trash = parseInt("{{trash}}")
+                    var metal = parseInt("{{metal}}")
+                    var paper = parseInt("{{paper}}")
+                    var cardboard = parseInt("{{cardboard}}")
+                    var plastic = parseInt("{{plastic}}")
                     const ctl = document.getElementById('myChartx').getContext('2d');
                     const myChartx = new Chart(ctl, {
-                        type: 'line',
+                        type: 'bar',
                         data: {
-                            labels: ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'],
+                            labels: ['Glass', 'Trash', 'Metal', 'Cardboard', 'Paper', 'Plastic'],
                             datasets: [{
                                 label: 'no of user registrations',
-                                data: [5, 3, 5, 7, 10, 12,14],
+                                data: [glass, trash, metal, cardboard, paper, plastic],
                                 backgroundColor: [
                                     'rgba(255, 99, 132, 0.2)',
                                     'rgba(54, 162, 235, 0.2)',
