@@ -154,8 +154,7 @@
                                         <i class="fas fa-shipping-fast"></i>
                                     </h4>
                                     <h3>
-                                        10 
-                                        <!-- {{ data }} -->
+                                       {{request_count}}
                                     </h3>
                                 </div>
                             </a>
@@ -180,6 +179,7 @@
         <h3>User Registrations</h3>
         <canvas id="myChartx" width="400" height="400"></canvas>
                     <script>
+                    
                     const ctl = document.getElementById('myChartx').getContext('2d');
                     const myChartx = new Chart(ctl, {
                         type: 'line',
@@ -220,17 +220,20 @@
 
     <div class="col-md-4">
         <br>
-        <h4>Number of Garbage requests</h4>
+        <h4>Users/Vehicles/Requests</h4>
         <canvas id="myChart" width="400" height="400"></canvas>
                     <script>
+                    var vehicle_count = parseInt("{{vehicle_count}}")
+                    var user_count = parseInt("{{users_count}}")
+                    var request_count = parseInt("{{request_count}}")
                     const ctx = document.getElementById('myChart').getContext('2d');
                     const myChart = new Chart(ctx, {
-                        type: 'bar',
+                        type: 'polarArea',
                         data: {
-                            labels: ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'],
+                            labels: ['Registered Vehicles', 'Registered Users','Total number of Requests'],
                             datasets: [{
                                 label: 'garbage request',
-                                data: [5, 3, 5, 7, 10, 12,15],
+                                data: [vehicle_count, user_count,request_count],
                                 backgroundColor: [
                                     'rgba(255, 99, 132, 0.2)',
                                     'rgba(54, 162, 235, 0.2)',
@@ -265,14 +268,16 @@
         <h4>Garbage collected details</h4>
         <canvas id="myChart3" width="400" height="400"></canvas>
                     <script>
+                    var collected = parseInt("{{collected}}")
+                    var not_collected = parseInt("{{not_collected}}")
                     const ctz = document.getElementById('myChart3').getContext('2d');
                     const myChart3 = new Chart(ctz, {
                         type: 'doughnut',
                         data: {
-                            labels: ['Garbage Request', 'Collected Garbage Request'],
+                            labels: ['Collected Garbage Request','Not collected Garbage Request'],
                             datasets: [{
                                 label: 'garbage request',
-                                data: [5, 3],
+                                data: [collected, not_collected],
                                 backgroundColor: [
                                     'rgba(255, 99, 132, 0.2)',
                                     'rgba(54, 162, 235, 0.2)',
