@@ -23,6 +23,7 @@ urlpatterns = [
     path('user/', include('user_register.urls')),
     path('vehicle/', include('vehicle_register.urls')),
     path('complain/', include('complain.urls')),
+    path('', include('admin_login.urls')),
 
     #REST FRAMEWORK URLS
     path('api/', include('request.urls')),

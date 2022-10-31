@@ -47,6 +47,7 @@ INSTALLED_APPS = [
     'request',
     'garbage',
     'complain',
+    'admin_login',
 ]
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
