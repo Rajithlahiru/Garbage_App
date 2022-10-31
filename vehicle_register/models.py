@@ -1,4 +1,4 @@
-from tkinter import CASCADE
+# from tkinter import CASCADE
 from django.db import models
 from user_register.models import User
 
