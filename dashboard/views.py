@@ -21,7 +21,7 @@ def report(request):
     var = datetime.date.today()
     formatDate = var.strftime("%d-%b-%y")
     collected = Request.objects.filter(status = "COLLECTED").count()
-    not_collected = Request.objects.filter(status = "NOT COLLECTED").count()
+    not_collected = Request.objects.filter(status = "PENDING").count()
     glass = Request.objects.filter(garbage_type = "glass").count()
     plastic = Request.objects.filter(garbage_type = "plastic").count()
     paper = Request.objects.filter(garbage_type = "paper").count()

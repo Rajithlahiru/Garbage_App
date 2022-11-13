@@ -100,27 +100,35 @@
             <!-- user and vehicle register section -->
             <div class="container-fluid pt-4 px-4">
 <div class="container">
-<!-- <a href="{% url 'complain_insert' %}" class="btn btn-outline-danger">
-    <i class="fas fa-plus"></i> Add New Complain
+
+<!-- <a href="{% url 'user_insert' %}" class="btn btn-outline-success">
+    <i class="fas fa-plus"></i> Add New
 </a> -->
 <br><br>
 
-<center><h3>Complains</h3></center><hr><br><br>
+<table class="table table-success table-striped">
+    <thead class="table-dark">
+        <tr class>
+            <td style="text-align: center;">ID</td>
+            <td style="text-align: center;">Mobile no</td>
+            <td style="text-align: center;">Garbage Type</td>
+            <td style="text-align: center;">Location</td>
+            <td style="text-align: center;">Status</td>
 
-{% for complain in complain_list %}
-<div class="list-group">
-    <a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
-      <div class="d-flex w-100 justify-content-between">
-        <h5 class="mb-1">{{ complain.email }}</h5>
-        <small><i><b>request id {{ complain.req_id }}</b></i></small>
-      </div>
-      <p class="mb-1">{{ complain.detail}}</p>
-    </a>
-    <br>
-  </div>
-  
-
-  {% endfor %}
+        </tr>
+    </thead>
+    <tbody>
+        {% for list in request_list %}
+            <tr style="height: 60px;">
+            <td style="text-align: center;">{{list.id}}</td>
+            <td style="text-align: center;">{{list.mobile_no}}</td>
+            <td style="text-align: center;">{{list.garbage_type}}</td>
+            <td style="text-align: center;">{{list.location}}</td>
+            <td style="text-align: center;">{{list.status}}</td>
+                </form>
+        {% endfor %}
+    </tbody>
+</table>
 </div>
 </div>
            <!-- user and vehicle register section ended -->

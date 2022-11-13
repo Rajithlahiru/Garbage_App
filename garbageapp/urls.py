@@ -24,6 +24,7 @@ urlpatterns = [
     path('vehicle/', include('vehicle_register.urls')),
     path('complain/', include('complain.urls')),
     path('', include('admin_login.urls')),
+    path('request_list', include('request_list.urls')),
 
     #REST FRAMEWORK URLS
     path('api/', include('request.urls')),
