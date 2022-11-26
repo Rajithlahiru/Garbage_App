@@ -26,7 +26,7 @@ import torch.nn.functional as F
 
 # dataset.classes equal ['Cardboard', 'Glass', 'Metal', 'Paper', 'Plastic', 'Trash'] 
 
-classes= ['Cardboard', 'Glass', 'Metal', 'Paper', 'Plastic', 'Trash','other']
+classes= ['Cardboard', 'Glass', 'Metal', 'Organic', 'Other', 'Paper', 'Plastic']
 
 from torchvision.datasets import ImageFolder
 import torchvision.transforms as transforms
