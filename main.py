@@ -26,7 +26,7 @@ import torch.nn.functional as F
 
 # dataset.classes equal ['Cardboard', 'Glass', 'Metal', 'Paper', 'Plastic', 'Trash'] 
 
-classes= ['Cardboard', 'Glass', 'Metal', 'Organic', 'Other', 'Paper','Plastic']
+classes= ['Cardboard', 'Coconut Shell', 'Face Mask', 'Glass', 'Metal', 'Organic', 'Paper', 'Plastic', 'Polythene', 'clothes','shoes']
 
 from torchvision.datasets import ImageFolder
 import torchvision.transforms as transforms
@@ -113,7 +113,7 @@ device
 model = to_device(ResNet(), device)
 
 # Model class must be defined somewhere
-model = torch.load('Data Models/save.h5',map_location=torch.device('cpu'))
+model = torch.load('Data Models/save5.h5',map_location=torch.device('cpu'))
 model.eval()
 
 def predict_image(img, model):
@@ -144,5 +144,7 @@ def predict_external_image(image_name):
     f.close()
 
 predict_external_image('temp.jpg')
+
+# predict_external_image('4.jpg')
 
 # predict_external_image('metal408.jpg')

@@ -72,22 +72,42 @@ class ImageClasifier(mixins.ListModelMixin, mixins.CreateModelMixin, mixins.Upda
 
 
     def post(self, request, *args, **kwargs):
+
         file_obj = request.FILES['image']
         file = file_obj.read()
         default_storage.save('temp/temp.jpg', ContentFile(file))
 
-        a=subprocess.call("python3 main.py", shell=True)
+        a=subprocess.call("python validateImg.py", shell=True)
 
 
         print (a)
+
+
+
+        try:
+            f = open("temp/res.txt", "r")
+            result = f.read()
+            print(result)
+            f.close()
+            if result == "Garbage":
+
+                a = subprocess.call("python main.py", shell=True)
+
+                print(a)
+                if os.path.exists("temp/temp.jpg"):
+                    os.remove("temp/temp.jpg")
+
+                f = open("temp/res.txt", "r")
+                result = f.read()
+                print(result)
+                f.close()
+        except:
+            result = "Not Garbage"
+
+
+
         if os.path.exists("temp/temp.jpg"):
             os.remove("temp/temp.jpg")
-
-        f = open("temp/res.txt", "r")
-        result=f.read()
-        print(result)
-        f.close()
-
         if os.path.exists("temp/res.txt"):
             os.remove("temp/res.txt")
 
