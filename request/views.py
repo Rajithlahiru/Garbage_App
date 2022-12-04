@@ -101,7 +101,8 @@ class ImageClasifier(mixins.ListModelMixin, mixins.CreateModelMixin, mixins.Upda
                 result = f.read()
                 print(result)
                 f.close()
-        except:
+        except Exception as e:
+            print (e)
             result = "Not Garbage"
 
 
