@@ -77,7 +77,7 @@ class ImageClasifier(mixins.ListModelMixin, mixins.CreateModelMixin, mixins.Upda
         file = file_obj.read()
         default_storage.save('temp/temp.jpg', ContentFile(file))
 
-        a=subprocess.call("python validateImg.py", shell=True)
+        a=subprocess.call("python3 validateImg.py", shell=True)
 
 
         print (a)
@@ -91,7 +91,7 @@ class ImageClasifier(mixins.ListModelMixin, mixins.CreateModelMixin, mixins.Upda
             f.close()
             if result == "Garbage":
 
-                a = subprocess.call("python main.py", shell=True)
+                a = subprocess.call("python3 main.py", shell=True)
 
                 print(a)
                 if os.path.exists("temp/temp.jpg"):
